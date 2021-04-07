@@ -1,0 +1,43 @@
+
+h1 {
+    margin: 1px;
+    border: 2px solid;
+}
+
+.chamada {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    border: 1px solid
+}
+
+.hdr {
+    margin: 15px;
+    margin-left: 1400px;
+}
+
+.images {
+    width: 100%;
+    height: auto;
+}
+
+.ctrl {
+    background-color: grey;
+}
+
+.tabela {
+    width: 100%;
+}
+
+.add-produto {
+    background-color: grey;
+}
+
+.funcionarios {
+    background-color: grey;
+
+}
+
+.hdr1 {
+    width: 100%;
+}
