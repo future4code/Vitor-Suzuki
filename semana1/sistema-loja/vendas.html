@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Página de Vendas</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Bem-vind@ ao <em>Music Center</em>!</h1>
+            <p class="chamada">A maior loja de instrumentos musicais!</p>
+        </div>
+    
+        <div class="hdr">
+            <a href="index.html">PÁGINA INICIAL</a>
+            <a href="ctrl-estoque.html">CONTROLE DE ESTOQUE</a>
+            <a href="add-produto.html">ADICIONAR PRODUTO</a>
+            <a href="funcionarios.html">FUNCIONÁRIOS</a>
+            <a href="vendas.html">PÁGINA DE VENDAS</a>
+            <a href="historico-vendas.html">HISTÓRICO</a>
+        </div>
+    </header>
+
+    <div class="produto-checkout">
+    <ul style="margin-left: 10px;">PRODUTOS
+        <li>Gibson Les Paul</li>
+        <li>Gibson Flying V</li>
+        <li>Gibson Explorer</li>
+        <li>Gibson SG</li>
+        <li>Fender Telecaster</li>
+    </ul>
+    </div>
+    <br>
+
+    <form>
+        <label for="produto-comprado">Produto Comprado</label>
+        <input type="text" id="produto-comprado" name="produto-comprado"><br>
+        <br>
+
+        <p>Selecione a forma de pagamento:</p>
+        <input type="radio" id="dinheiro" name="DINHEIRO" value="dinheiro">
+        <label for="male">Dinheiro</label><br>
+        <input type="radio" id="cartão" name="CARTÃO" value="cartão">
+        <label for="female">Cartão</label><br>
+    </form>
+</body>
+</html>

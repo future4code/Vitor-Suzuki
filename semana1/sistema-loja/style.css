@@ -1,19 +1,48 @@
 
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 h1 {
-    margin: 1px;
-    border: 2px solid;
+    height: 80px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    margin: 0px;
+    border: 0px solid;
+    padding: 2vh 2vw;
+    position: sticky;
+    top: 0;
+}
+h2 {
+    text-align: center;
 }
 
 .chamada {
-    margin-top: 5px;
-    margin-left: 10px;
-    margin-bottom: 25px;
-    border: 1px solid
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 1px solid;
+    position: sticky;
+    top: 0;
 }
 
 .hdr {
-    margin: 15px;
-    margin-left: 1400px;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    padding: 3vh 2vh;
+    position: sticky;
+    top: 0;
+    color: white;
+    background-color: #3a3a3a;
+}
+
+a:visited {
+    color: white
 }
 
 .images {
@@ -40,4 +69,26 @@ h1 {
 
 .hdr1 {
     width: 100%;
+}
+
+ul, li {
+    display: list-item;
+    list-style: disc;
+}
+
+.produto-checkout {
+    background-color: grey;
+    position: relative;
+}
+
+table, th, td {
+    border: 1px solid
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    background-color: grey;
 }
