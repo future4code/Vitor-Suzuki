@@ -1,0 +1,102 @@
+body {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: white;
+}
+
+#main-container {
+    display: grid;
+    grid-template-rows: 1fr 7fr 4fr 1fr;
+}
+
+#top-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: green;
+}
+
+#middle-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+#vertical-middle-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.green-background {
+    font-size: 1vw;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: green;
+}
+
+.yellow-background {
+    font-size: 1vw;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: yellow;
+}
+
+.pink-background {
+    font-size: 1vw;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    background-color: fuchsia;
+}
+
+#content2 {
+    display: grid;
+}
+
+.blue-background {
+    display: grid;
+    font-size: 1vw;
+    justify-items: center;
+    align-items: center;
+    background-color: blue;
+}
+
+#image {
+    display: grid;
+}
+
+#extra {
+    display: grid;
+}
+
+.red-background {
+    font-size: 1vw;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: red;
+}
+
+.lightgreen-background {
+    display: grid;
+    font-size: 1vw;
+    justify-items: center;
+    align-items: center;
+    background-color: lightgreen;
+}
+
+#footer {
+    display: grid;
+}
+
+.purple-background {
+    font-size: 1vw;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: purple;
+}
