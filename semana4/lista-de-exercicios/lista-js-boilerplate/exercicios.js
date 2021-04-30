@@ -37,9 +37,9 @@ function retornaMaiorNumero(array) {
    let maiorNumero = []
 
    for (let i = 0; i < array.length; i++) {
-     if (array[i] > maiorNumero) {
-        maiorNumero = array[i]
-     }
+      if (array[i] > maiorNumero) {
+         maiorNumero = array[i]
+      }
    }
    return maiorNumero
 }
@@ -60,19 +60,39 @@ function retornaExpressoesBooleanas() {
 //Exercício 7
 
 function retornaNNumerosPares(n) {
-   // implemente sua lógica aqui
+   for (i = 0; i < n; i++) {
+      if (i % 2 === 0) {
+         return i}
+      }
+      return i
 }
 
 // Exercício 8
 
 function checaTriangulo(a, b, c) {
-   // implemente sua lógica aqui
+   return (a === b && b === c) && 'Equilátero' ||
+      (a === b || a === c || b === c) && 'Isósceles' ||
+      'Escaleno';
 }
 
 // Exercício 9
 
 function comparaDoisNumeros(num1, num2) {
-   // implemente sua lógica aqui
+   // const doisNumeros = {} 
+
+   // if (num1 > num2) {
+   //    doisNumeros.maiorNumero === num1
+   //    doisNumeros.diferenca === num1 - num2
+   // } else {
+   //    doisNumeros.maiorNumero === num2
+   //    doisNumeros.diferenca === num2 - num1
+   // }
+
+   // if (((num1 > num2) && (num1 % num2 === 0)) || ((num2 > num1) && (num2 % num1 === 0))) {
+   //    doisNumeros.maiorDivisivelPorMenor = true
+   // }
+
+   
 }
 
 // Exercício 10
