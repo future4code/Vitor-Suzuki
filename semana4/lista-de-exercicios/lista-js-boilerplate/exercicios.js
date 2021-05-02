@@ -60,11 +60,14 @@ function retornaExpressoesBooleanas() {
 //Exercício 7
 
 function retornaNNumerosPares(n) {
-   for (i = 0; i < n; i++) {
+   let arr = []
+   for (i = 0; arr.length < n; i++) {
       if (i % 2 === 0) {
-         return i}
+         arr.push(i)
       }
-      return i
+   }
+
+   return arr
 }
 
 // Exercício 8
@@ -78,57 +81,111 @@ function checaTriangulo(a, b, c) {
 // Exercício 9
 
 function comparaDoisNumeros(num1, num2) {
-   // const doisNumeros = {} 
+   const doisNumeros = {}
 
-   // if (num1 > num2) {
-   //    doisNumeros.maiorNumero === num1
-   //    doisNumeros.diferenca === num1 - num2
-   // } else {
-   //    doisNumeros.maiorNumero === num2
-   //    doisNumeros.diferenca === num2 - num1
-   // }
+   if (num1 > num2) {
+      doisNumeros.maiorNumero = num1
+      doisNumeros.diferenca = num1 - num2
+   } else {
+      doisNumeros.maiorNumero = num2
+      doisNumeros.diferenca = num2 - num1
+   }
 
-   // if (((num1 > num2) && (num1 % num2 === 0)) || ((num2 > num1) && (num2 % num1 === 0))) {
-   //    doisNumeros.maiorDivisivelPorMenor = true
-   // }
+   if (((num1 > num2) && (num1 % num2 === 0)) || ((num2 > num1) && (num2 % num1 === 0))) {
+      doisNumeros.maiorDivisivelporMenor = true
+   }
 
-   
+
+   return doisNumeros
+
 }
 
 // Exercício 10
 
 function segundoMaiorEMenor(array) {
-   // implemente sua lógica aqui
+   let maiorNumero = Infinity;
+   let menorNumero = 0;
+   for (let numero of array) {
+      if (numero > menorNumero) {
+         maiorNumero = numero
+      }
+      if (numero < maiorNumero) {
+         menorNumero = numero;
+      }
+   }
+
+   let segundoMaiorNumero = 0;
+   let segundoMenorNumero = Infinity;
+   for (let numero of array) {
+      if (numero !== menorNumero) {
+         if (numero < segundoMenorNumero) {
+            segundoMenorNumero = numero
+         }
+      }
+      if (numero !== maiorNumero) {
+         if (numero > segundoMaiorNumero) {
+            segundoMaiorNumero = numero;
+         }
+      }
+   }
+
+   return [segundoMaiorNumero, segundoMenorNumero]
+
 }
 
 //Exercício 11
 
 function ordenaArray(array) {
-   // implemente sua lógica aqui
+   let len = array.length;
+   for (let i = 0; i < len; i++) {
+      for (let j = 0; j < len; j++) {
+         if (array[j] > array[j + 1]) {
+            let tmp = array[j]; //20
+            array[j] = array[j + 1]; //13
+            array[j + 1] = tmp; //20
+         }
+      }
+   }
+   return array;
 }
 
 // Exercício 12
 
 function filmeFavorito() {
-   // implemente sua lógica aqui
+   const filmeInfo = {
+      nome: 'O Diabo Veste Prada',
+      ano: 2006,
+      diretor: 'David Frankel',
+      atores: ['Meryl Streep', 'Anne Hathaway', 'Emily Blunt', 'Stanley Tucci']
+   }
+
+   return filmeInfo
 }
 
 // Exercício 13
 
 function imprimeChamada() {
-   // implemente sua lógica aqui
+   const filmeInfo = filmeFavorito()
+   return `Venha assistir ao filme ${filmeInfo.nome}, de ${filmeInfo.ano}, dirigido por ${filmeInfo.diretor} e estrelado por${filmeInfo.atores.map(ator => (` ${ator}`))}.`
 }
 
 // Exercício 14
 
 function criaRetangulo(lado1, lado2) {
-   // implemente sua lógica aqui
+   return {
+      largura: lado1,
+      altura: lado2,
+      perimetro: 2 * (lado1 + lado2),
+      area: lado1 * lado2
+   }
 }
 
 // Exercício 15
 
 function anonimizaPessoa(pessoa) {
-   // implemente sua lógica aqui
+   pessoa.nome = 'ANÔNIMO'
+
+   return pessoa
 }
 
 // Exercício 16
@@ -143,31 +200,31 @@ const arrayDePessoas = [
 // Exercício 16, letra A
 
 function maioresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+   return arrayDePessoas.filter(pessoa => (pessoa.idade >= 20))
 }
 
 // Exercício 16, letra B
 
 function menoresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+   return arrayDePessoas.filter(pessoa => (pessoa.idade < 20))
 }
 
 // Exercício 17, letra A
 
 function multiplicaArrayPor2(array) {
-   // implemente sua lógica aqui
+   return array.map(numero => numero * 2)
 }
 
 // Exercício 17, letra B
 
 function multiplicaArrayPor2S(array) {
-   // implemente sua lógica aqui
+   return array.map(numero => String(numero * 2))
 }
 
 // Exercício 17, letra C
 
 function verificaParidade(array) {
-   // implemente sua lógica aqui
+   return array.map(numero => numero % 2 === 0 ? `${numero} é par` : `${numero} é ímpar`)
 }
 
 // Exercício 18
@@ -184,14 +241,14 @@ const pessoas = [
 //Exercício 18, letra A
 
 function retornaPessoasAutorizadas() {
-   // implemente sua lógica aqui
+   return pessoas.filter(pessoa => (pessoa.idade > 14 && pessoa.idade < 60 && pessoa.altura >= 1.5))
 }
 
 
 // Exercício 18, letra B
 
 function retornaPessoasNaoAutorizadas() {
-   // implemente sua lógica aqui
+   return pessoas.filter(pessoa => !(pessoa.idade > 14 && pessoa.idade < 60 && pessoa.altura >= 1.5))
 }
 
 //Exercício 19
@@ -206,8 +263,17 @@ const consultasNome = [
 //Exercício 19, letra A
 
 function ordenaPorNome() {
-
-}
+   for(let i = 0; i < consultasNome.length; i++) {
+      for(let j = 0; j < consultasNome.length; j++) {
+        if(consultasNome[j]?.nome > consultasNome[j + 1]?.nome) {
+          const temp = consultasNome[j]
+          consultasNome[j] = consultasNome[j + 1]
+          consultasNome[j + 1] = temp
+        }
+      }
+    }
+    return consultasNome
+  }
 
 // Exercício 19, letra B
 
@@ -219,7 +285,30 @@ const consultasData = [
 ]
 
 function ordenaPorData() {
-
+   for(let i = 0; i < consultasData.length; i++) {
+      for(let j = 0; j < consultasData.length - i - 1; j++) {
+  
+        const arrayData1 = consultasData[j].dataDaConsulta.split('/')
+        const dia1 = Number(arrayData1[0])
+        const mes1 = Number(arrayData1[1])
+        const ano1 = Number(arrayData1[2])
+  
+        const arrayData2 = consultasData[j + 1].dataDaConsulta.split('/')
+        const dia2 = Number(arrayData2[0])
+        const mes2 = Number(arrayData2[1])
+        const ano2 = Number(arrayData2[2])
+  
+        const data1 = new Date(ano1, mes1 -1, dia1).getTime()
+        const data2 = new Date(ano2, mes2-1, dia2).getTime()
+  
+        if(data1 > data2) {
+          const temp = consultasData[j]
+          consultasData[j] = consultasData[j + 1]
+          consultasData[j + 1] = temp
+        }
+      }
+    }
+    return consultasData
 }
 
 //Exercício 20
@@ -234,5 +323,12 @@ const contas = [
 ]
 
 function atualizaSaldo() {
-   // implemente sua lógica aqui
+   contas.forEach((conta) => {
+      let totalDeCompras = 0
+      conta.compras.forEach((valor) => {
+        totalDeCompras += valor
+      })
+      conta.saldoTotal -= totalDeCompras
+    })
+    return contas
 }
