@@ -49,17 +49,17 @@ class Post extends React.Component {
   }
 
   onClickCurtida = () => {
-    this.setState({
-      curtido: false,
-      numeroCurtidas: this.state.numeroCurtidas = 0,
-    })
-    console.log('Curtiu!')
-  }
+    let novoNumeroCurtidas
 
-  handleCurtida = () => {
+    if(this.state.curtido) {
+      novoNumeroCurtidas = this.state.numeroCurtidas - 1
+    } else {
+      novoNumeroCurtidas = this.state.numeroCurtidas + 1
+    }
+
     this.setState({
       curtido: !this.state.curtido,
-      numeroCurtidas: this.state.numeroCurtidas = 1,
+      numeroCurtidas: novoNumeroCurtidas
     })
   }
 
@@ -104,7 +104,6 @@ class Post extends React.Component {
           icone={iconeCurtida}
           onClickIcone={this.onClickCurtida}
           valorContador={this.state.numeroCurtidas}
-          onClickIcone={this.handleCurtida}
         />
 
         <IconeComContador
