@@ -38,28 +38,45 @@ export default class Home extends React.Component {
             })
             .catch((err) => {
                 console.log(err)
-                alert("Tente novamente");
+                alert("Tente novamente!");
             })
     }
 
     render() {
         return (
-            <div className="App">
-                <h1>Labenusers</h1>
-                <button onClick={this.props.trocaDePagina}>Troca de Página</button>
-                <h1>Criar usuário</h1>
-                <input
-                    type="text"
-                    placeholder="Nome"
-                    value={this.state.inputName}
-                    onChange={this.handleName}></input>
-                <input
-                    type="email"
-                    placeholder="E-mail"
-                    value={this.state.inputEmail}
-                    onChange={this.handleEmail}
-                ></input>
-                <button onClick={this.createUser}>Criar</button>
+            <div className="limiter">
+                <div className="container">
+                    <div className="container-create">
+                        <div className="container-form">
+                            <div>
+                                <h1>Labenusers</h1>
+                                <button onClick={this.props.trocaDePagina}>Troca de Página</button>
+                            </div>
+                            <div>
+                                <h2>Criar usuário</h2>
+                                <input className="input"
+                                    type="text"
+                                    placeholder="Nome Completo"
+                                    value={this.state.inputName}
+                                    onChange={this.handleName}></input>
+                                <input className="input"
+                                    type="email"
+                                    placeholder="E-mail"
+                                    value={this.state.inputEmail}
+                                    onChange={this.handleEmail}
+                                ></input>
+                                <hr></hr>
+                                <div className="wrap-btn">
+                                    <div className="container-bgbtn">
+                                        <div className="container-btn">
+                                            <button className="button" onClick={this.createUser}>Criar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
