@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"
 
-const Home = () => {
+const Home = (props) => {
 
     const [profile, setProfile] = useState({})
 
@@ -36,21 +36,11 @@ const Home = () => {
 
         getProfileToChoose();
     }
-
-    const getMatches = () => {
-        axios
-        .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vitor-suzuki/matches")
-        .then()
-        .catch()
-    }
-
-
     return (
         <div>
-            <button>Match Screen</button>
-            {() => getProfileToChoose()}
-            <p>{profile.name}</p>
-            <p>{profile.age}</p>
+            <button onClick={() => props.changePage()}>Matches</button>
+            <h1>{profile.name}</h1>
+            <h3>{profile.age}</h3>
             <p>{profile.bio}</p>
             <button onClick={() => postChoosePerson(false)}>No Match</button>
             <button onClick={() => postChoosePerson(true)}>Match</button>
