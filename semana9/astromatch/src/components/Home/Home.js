@@ -13,7 +13,7 @@ const Home = (props) => {
         axios
             .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vitor-suzuki/person`)
             .then((res) => setProfile(res.data.profile))
-            .catch((err) => console.log(err))
+            .catch(() => alert("Acabaram os perfis :c"))
     };
 
     const postChoosePerson = (choice) => {
@@ -26,22 +26,44 @@ const Home = (props) => {
             "id": profile.id,
             "choice": choice
         }
-        const url = 
+        const url =
             `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vitor-suzuki/choose-person`
-        
+
         axios
             .post(url, body, header)
-            .then((res) => {console.log(res)})
-            .catch((err) => {console.log(err)})
+            .then(() => { getProfileToChoose() })
+            .catch(() => { alert("Acabaram os perfis :c") })
 
-        getProfileToChoose();
+
     }
+
+    const clearMatches = () => {
+        const header = {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        const url =
+            "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vitor-suzuki/clear"
+
+        axios
+        .put(url, header)
+        .then(() => {alert("Matches limpados!")})
+        .catch((err) => {console.log(err)})
+    }
+
     return (
         <div>
             <button onClick={() => props.changePage()}>Matches</button>
-            <h1>{profile.name}</h1>
-            <h3>{profile.age}</h3>
-            <p>{profile.bio}</p>
+            { profile ?
+                <div>
+                    <h1>{profile.name}</h1>
+                    <h3>{profile.age}</h3>
+                    <p>{profile.bio}</p>
+                </div>
+                :
+                <button onClick={() => clearMatches()}>Clear Matches!</button>
+            }
             <button onClick={() => postChoosePerson(false)}>No Match</button>
             <button onClick={() => postChoosePerson(true)}>Match</button>
         </div>
