@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import Background from "../img/Background.jpg"
+import { goToHomePage, goToLoginPage, goToApplicationFormPage } from '../routes/coordinator'
 
 import styled from "styled-components"
 
@@ -19,11 +20,19 @@ const Image = styled.img`
 const HomePage = () => {
   const history = useHistory();
 
-    return (
-      <ImgContainer>
-        <Image src={Background}></Image>
-      </ImgContainer>
-    );
-  }
-  
-  export default HomePage;
+  return (
+
+    <ImgContainer>
+      <header>
+        <h3 onClick={() => goToHomePage(history)}>Home Page</h3>
+        <ul className="Links">
+          <li>Login</li>
+          <li>Application Form</li>
+        </ul>
+      </header>
+      <Image src={Background}></Image>
+    </ImgContainer>
+  );
+}
+
+export default HomePage;
