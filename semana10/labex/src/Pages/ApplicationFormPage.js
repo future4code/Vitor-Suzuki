@@ -6,7 +6,7 @@ const AplicationFormPage = () => {
   
     return (
       <div className="App">
-  
+        <h1>Application Form</h1>
       </div>
     );
   }

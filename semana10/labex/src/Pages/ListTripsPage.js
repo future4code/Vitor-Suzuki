@@ -6,7 +6,7 @@ const ListTripsPage = () => {
   
     return (
       <div className="App">
-  
+        <h1>List Trips</h1>
       </div>
     );
   }

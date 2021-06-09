@@ -6,7 +6,7 @@ const CreateTripPage = () => {
   
     return (
       <div className="App">
-  
+        <h1>Create Trip</h1>
       </div>
     );
   }
