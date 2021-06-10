@@ -1,5 +1,7 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
+import { BASE_URL } from '../constants/urls';
 
 const ListTripsPage = () => {
   const history = useHistory();
@@ -10,5 +12,5 @@ const ListTripsPage = () => {
       </div>
     );
   }
-  
-  export default ListTripsPage;
+
+export default ListTripsPage;

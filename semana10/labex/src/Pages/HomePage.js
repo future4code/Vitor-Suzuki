@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import Background from "../img/Background.jpg"
-import { goToHomePage, goToLoginPage, goToApplicationFormPage } from '../routes/coordinator'
+import { goToHomePage, goToLoginPage, goToApplicationFormPage, goToAdminHomePage } from '../routes/coordinator';
 
 import styled from "styled-components"
 
@@ -26,8 +26,9 @@ const HomePage = () => {
       <header>
         <h3 onClick={() => goToHomePage(history)}>Home Page</h3>
         <ul className="Links">
-          <li>Login</li>
+          <li onClick={() => goToLoginPage(history)}>Login</li>         
           <li>Application Form</li>
+          <li onClick={() => goToAdminHomePage(history)}>Admin Home Page</li>
         </ul>
       </header>
       <Image src={Background}></Image>
