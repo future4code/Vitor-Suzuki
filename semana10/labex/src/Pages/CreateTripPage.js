@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import useInput from '../hooks/useInput';
 import { useHistory } from "react-router-dom";
 import { BASE_URL } from '../constants/urls';
@@ -16,7 +16,8 @@ const CreateTripPage = () => {
 
   useProtectedPage();
 
-  const createTrip = () => {
+  const createTrip = (event) => {
+    event.preventDefault()
     const header = {
       headers: {
         auth: localStorage.getItem("token")
@@ -27,23 +28,23 @@ const CreateTripPage = () => {
 
     axios
       .post(`${BASE_URL}/trips`, body, header)
-      .then((res) => { console.log(res) })
-      .catch((err) => { console.log(err) })
+      .then(() => {alert("Viagem criada com sucesso!"); history.push("/admin/trips/list")})
+      .catch(() => { alert("Tente novamente")})
   }
 
   return (
     <div className="App">
-      <button onClick={console.log(name)}>Teste</button>
       <header>
         <h3 onClick={() => goToHomePage(history)}>Home Page</h3>
+        <h3 onClick={() => goToAdminHomePage(history)}>Admin Home Page</h3>
         <ul className="Links">
           <li onClick={() => goToCreateTripPage(history)}>Create Trip</li>
           <li onClick={() => goToListTripsPage(history)}>Trips List</li>
-          <li onClick={() => goToAdminHomePage(history)}>Admin Home Page</li>
+          
         </ul>
       </header>
       <h1>Create Trip</h1>
-      <form name="formCreateTrip" onSubmit={createTrip}>
+      <form onSubmit={createTrip}>
         <input
           value={name}
           onChange={setName}
@@ -71,7 +72,6 @@ const CreateTripPage = () => {
           value={description}
           onChange={setDescription}
           type="text"
-          pattern={"^[A-Z]{1,30}$"}
           placeholder="Descrição"
           required
         />
@@ -79,7 +79,6 @@ const CreateTripPage = () => {
           value={durationInDays}
           onChange={setDurationInDays}
           type="number"
-          pattern={"^([5-9]\d|\d{3,})$"}
           placeholder="Duração em dias"
           required
         />

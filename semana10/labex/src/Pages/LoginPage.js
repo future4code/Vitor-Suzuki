@@ -10,7 +10,7 @@ const LoginPage = () => {
   const [email, setEmail] = useInput("");
   const [password, setPassword] = useInput("");
 
-  const Login = (event) => {
+  const login = (event) => {
     event.preventDefault()
     const body = { email, password }
 
@@ -19,7 +19,6 @@ const LoginPage = () => {
       .then((res) => {
         localStorage.setItem("token", res.data.token)
         history.push("/admin/trips/:id")
-        console.log(res)
       })
       .catch((err) => alert(err.response.data.message))
   }
@@ -30,14 +29,14 @@ const LoginPage = () => {
     <div className="App">
       <header>
         <h3 onClick={() => goToHomePage(history)}>Home Page</h3>
+        <h3 onClick={() => goToAdminHomePage(history)}>Admin Home Page</h3>
         <ul className="Links">
           <li onClick={() => goToLoginPage(history)}>Login</li>
-          <li onClick={() => goToAdminHomePage(history)}>Admin Home Page</li>
           <li>Application Form</li>
         </ul>
       </header>
       <h1>Login Page</h1>
-      <form onSubmit={Login}>
+      <form onSubmit={login}>
         <input
           value={email}
           onChange={setEmail}

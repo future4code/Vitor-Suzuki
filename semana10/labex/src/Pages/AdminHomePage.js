@@ -1,9 +1,9 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import useProtectedPage from '../hooks/useProtectedPage';
-import { goToHomePage, goToCreateTripPage, goToListTripsPage } from '../routes/coordinator'
+import { goToHomePage, goToCreateTripPage, goToListTripsPage, goToAdminHomePage } from '../routes/coordinator'
 
-const AplicationFormPage = () => {
+const AdminHomePage = () => {
   const history = useHistory();
 
   useProtectedPage();
@@ -12,6 +12,7 @@ const AplicationFormPage = () => {
     <div className="App">
       <header>
         <h3 onClick={() => goToHomePage(history)}>Home Page</h3>
+        <h3 onClick={() => goToAdminHomePage(history)}>Admin Home Page</h3>
         <ul className="Links">
           <li onClick={() => goToCreateTripPage(history)}>Create Trip</li>
           <li onClick={() => goToListTripsPage(history)}>Trips List</li>
@@ -22,4 +23,4 @@ const AplicationFormPage = () => {
   );
 }
 
-export default AplicationFormPage;
+export default AdminHomePage;

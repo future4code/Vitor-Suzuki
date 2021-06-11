@@ -25,10 +25,10 @@ const HomePage = () => {
     <ImgContainer>
       <header>
         <h3 onClick={() => goToHomePage(history)}>Home Page</h3>
+        <h3 onClick={() => goToAdminHomePage(history)}>Admin Home Page</h3>
         <ul className="Links">
           <li onClick={() => goToLoginPage(history)}>Login</li>         
-          <li>Application Form</li>
-          <li onClick={() => goToAdminHomePage(history)}>Admin Home Page</li>
+          <li onClick={() => goToApplicationFormPage(history)}>Application Form</li>
         </ul>
       </header>
       <Image src={Background}></Image>
