@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import { StyledToolBar, LogoContainer, Img } from './styled';
 import Button from '@material-ui/core/Button';
@@ -7,8 +7,24 @@ import { useHistory } from 'react-router-dom';
 import LogoImg from '../assets/img/logo.svg';
 
 
-const Header = () => {
+const Header = ({loginButton, setLoginButton}) => {
+    const token = localStorage.getItem("token")
     const history = useHistory()
+
+
+    const logout = () => {
+        localStorage.removeItem("token")
+    }
+    const loginButtonAction = () => {
+        if (token) {
+            logout()
+            setLoginButton("Login")
+            goToLogin(history)
+        } else {
+            goToLogin(history)
+        }
+    }
+
     return (
         <AppBar position="static">
             <StyledToolBar>
@@ -16,7 +32,7 @@ const Header = () => {
                     <Img src={LogoImg} onClick={() => goToFeed(history)} />
                     <Button className="ButtonLogo" onClick={() => goToFeed(history)} color="inherit">labeddit</Button>
                 </LogoContainer>
-                <Button onClick={() => goToLogin(history)} color="inherit">Login</Button>
+                <Button onClick={() => loginButtonAction()} color="inherit">{loginButton}</Button>
             </StyledToolBar>
         </AppBar>
     );

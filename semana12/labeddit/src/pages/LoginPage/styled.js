@@ -23,6 +23,10 @@ export const InputsContainer = styled.div`
   max-width: 450px;
   align-items: center;
   margin-bottom: 20px;
+  background-color: #e3e9f0bd;
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: inset #00000099 1px 1px 6px 1px;
 `
 
 export const SignUpButtonContainer = styled.div`
