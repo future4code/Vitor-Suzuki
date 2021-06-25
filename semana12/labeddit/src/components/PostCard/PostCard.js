@@ -18,10 +18,11 @@ const PostCard = (props) => {
                 userVote={props.userVote}
                 createdAt={props.createdAt}
                 username={props.username}
+                userId={props.userId}
             >
                 <PostSide>
                     <ForwardIcon className="UpIcon" />
-                    {props.voteSum}{props.userVote}
+                    {props.voteSum}
                     <ForwardIcon className="DownIcon" />
                 </PostSide>
                 <PostTitle>
