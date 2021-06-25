@@ -1,0 +1,83 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  width: 100vw;
+  background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(192,192,192,0.2));
+  color: white;
+  z-index: 1000;
+}
+
+li, h3 {
+  z-index: 1;
+  transition: 0.7s ease-in-out;
+}
+
+li:hover, h3:hover {
+  cursor: pointer;
+  color: #989898;
+}
+
+h1 {
+  color: white;
+  font-family: 'Dosis', sans-serif;
+  letter-spacing: 3px;
+}
+
+.NoAccount {
+  color: white;
+}
+
+form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.FormContainer {
+  box-shadow: inset #00000063 1px 1px 10px 8px;
+  padding: 40px;
+  border-radius: 5px;
+  width: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.Title {
+  box-shadow: inset #00000063 1px 1px 10px 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin-top: 10vh;
+}
+
+.Links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.TripsList {
+  
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
