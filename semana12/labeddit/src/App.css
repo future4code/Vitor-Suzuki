@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+
+.CommentIcon {
+  padding-top: 15px;
+}
+
+.UpIcon {
+  transform: rotate(270deg)
+}
+
+.DownIcon {
+  transform: rotate(90deg)
+}
