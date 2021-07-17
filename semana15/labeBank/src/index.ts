@@ -112,6 +112,8 @@ const calculateAge = (birth: any) => {
     return age
 }
 
+// -- Requisição e validação para criar um novo usuário -- //
+
 app.post('/users', (req: Request, res: Response) => {
     try {
         const { name, cpf, birth } = req.body;
@@ -143,12 +145,15 @@ app.post('/users', (req: Request, res: Response) => {
         }
 
         users.push(newUser)
-        res.status(200).send({message: "Usuário criado com sucesso", user: newUser})
+        res.status(201).send({message: "Usuário criado com sucesso", user: newUser})
 
     } catch(err) {
+        console.log(err)
         res.status(400).send(err.message)
     }
 })
+
+// -- Requisição para
 
 app.get('/users/:id', (req: Request, res: Response) => {
     try {
