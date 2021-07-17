@@ -114,7 +114,7 @@ const calculateAge = (birth: any) => {
 
 // -- Requisição e validação para criar um novo usuário -- //
 
-app.post('/users', (req: Request, res: Response) => {
+app.post('/users/create', (req: Request, res: Response) => {
     try {
         const { name, cpf, birth } = req.body;
         
@@ -153,13 +153,17 @@ app.post('/users', (req: Request, res: Response) => {
     }
 })
 
-// -- Requisição para
+// -- Requisição para mostrar todos os usuários -- //
 
-app.get('/users/:id', (req: Request, res: Response) => {
+app.get('/users', (req: Request, res: Response) => {
     try {
-        
-    } catch {
-
+        if (!users.length){
+            res.statusCode = 404
+            throw new Error("Nenhuma conta encontrada")
+        }
+        res.status(200).send(users)
+    } catch(err) {
+        res.status(400).send(err.message)
     }
 })
 
