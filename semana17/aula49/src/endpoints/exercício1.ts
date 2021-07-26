@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { connection } from '../data/connection'
 
 
-// a)
+// 1 - a)
 export const getAllUsers = async (req:Request, res: Response): Promise<void> => {
     try {
 
@@ -23,14 +23,14 @@ export const getAllUsers = async (req:Request, res: Response): Promise<void> => 
     }
 }
 
-// b)
+// 1 - b)
 
 export const getAllUsersPath = async (req:Request, res: Response): Promise<void> => {
     try {
 
-        const type = req.query.type  
+        const type = req.params.type  
         const result = await connection("aula49-exercicio")
-        .where("type", "LIKE", `${type}`)
+        .where("type", "LIKE", `:${type}`)
 
         res.status(200).send(result)
     } catch (error) {
