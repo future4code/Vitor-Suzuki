@@ -1,0 +1,28 @@
+[
+   {
+      "id" :1,
+      "name":  "Alice",
+      "nickname":  "Lili",
+      "email": "alice@gmail.com",
+      "cep":  "31550-000",
+      "logradouro": "Avenida Portugal",
+      "número": "637",
+      "complemento": "",
+      "bairro": "Jardim Atlântico",
+      "cidade": "Belo Horizonte",
+      "estado": "MG"
+   },
+   {
+      "id" :2,
+      "name":  "Bob",
+      "nickname":  "Robert",
+      "email": "bob@gmail.com",
+      "cep":  "80530-230",
+      "logradouro": "Rua Marechal Hermes",
+      "número": "542",
+      "complemento": "",
+      "bairro": "Juvevê",
+      "cidade": "Curitiba",
+      "estado": "PR"
+   }
+]
