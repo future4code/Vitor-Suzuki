@@ -3,6 +3,7 @@ import express, { Express } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
+import { login } from './endpoints/login';
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.post('/signup', signUp)
+app.post('/login', login)
 
 
 const server = app.listen(process.env.PORT || 3003, () => {

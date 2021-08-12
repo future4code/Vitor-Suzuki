@@ -28,7 +28,7 @@ export async function signUp(req: Request, res: Response) {
         const auth = new Authenticator()
         const token = auth.generateToken({id})
 
-        res.status(200).send({message: 'Usuário criado com sucesso!', token})
+        res.status(200).send({message: 'Usuário criado com sucesso!', id, name, token})
 
     } catch (error) {
         res.status(400).send({ message: error.message })

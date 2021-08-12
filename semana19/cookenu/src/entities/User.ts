@@ -20,4 +20,8 @@ export class User {
     public getPassword() {
         return this.password
     }
+
+    static toUserModel(data: any): User {
+        return new User(data.id, data.name, data.email, data.password)
+    }
 }

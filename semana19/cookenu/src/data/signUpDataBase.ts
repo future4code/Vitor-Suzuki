@@ -12,4 +12,16 @@ export class SignUpDataBase extends BaseDataBase {
         })
         .into('cookenu_users')
     }
+
+    public async findUserByEmail(email: string): Promise<User> {
+        try {
+            const user = await BaseDataBase.connection('cookenu_users')
+            .select('*')
+            .where({ email });
+            
+            return user[0] && User.toUserModel(user[0])
+        } catch (error) {
+            throw new Error(error.sqlMessage || error.message)
+        }
+    }
 }
