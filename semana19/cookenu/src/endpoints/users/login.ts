@@ -1,9 +1,7 @@
 import { Request, Response } from "express";
-import { SignUpDataBase } from "../data/signUpDataBase";
-import { User } from "../entities/User";
-import { Authenticator } from "../services/Authenticator";
-import { GenerateId } from "../services/GenerateId";
-import { HashManager } from "../services/HashManager";
+import { SignUpDataBase } from "../../data/signUpDataBase";
+import { Authenticator } from "../../services/Authenticator";
+import { HashManager } from "../../services/HashManager";
 
 export async function login(req: Request, res: Response) {
     try {
@@ -19,7 +17,7 @@ export async function login(req: Request, res: Response) {
         const hashManager = new HashManager()
         const passwordCompare = hashManager.compare(password, user.getPassword())
 
-        if (!passwordCompare) {
+        if (!user || !passwordCompare) {
             res.status(401).send('Email ou senha incorretos!')
         }
 
