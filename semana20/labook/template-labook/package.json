@@ -4,7 +4,7 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "migrations": "tsc && node ./build/migrations.js",
+      "migrations": "tsc && node ./build/migrations/index.js",
       "start": "tsc && node ./build/index.js",
       "dev": "ts-node-dev ./src/index.ts",
       "build": "clear && echo \"Transpiling files...\" && tsc && echo \"Done!\" ",
