@@ -1,3 +1,5 @@
+import { Post } from "./post/Post"
+
 export type authenticationData = {
     id: string
 }
@@ -21,4 +23,18 @@ export type PostInputDTO = {
     type: POST_TYPES,
     created_at?: Date,
     authorId?: string
+}
+
+export type getPostInputDTO = {
+    id: string
+}
+
+export function postModel(obj: any): Post {
+    return obj &&  {
+        id: obj.id,
+        photo: obj.photo,
+        description: obj.description,
+        type: obj.type,
+        createdAt: obj.created_at,
+        authorId: obj.author_id,
 }
