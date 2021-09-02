@@ -8,23 +8,23 @@ import TheftDetails from "../pages/TheftDetailsPage/TheftDetails";
 const Router = () => {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route exact path="/">
-                    <HomePage/>
-                </Route>
+                <Switch>
+                    <Route exact path="/">
+                        <HomePage />
+                    </Route>
 
-                <Route exact path="/details/:id">
-                    <TheftDetails/>
-                </Route>
+                    <Route exact path="/details/:id">
+                        <TheftDetails />
+                    </Route>
 
-                <Route exact path="/empty">
-                    <EmptyPage/>
-                </Route>
+                    <Route exact path="/empty">
+                        <EmptyPage />
+                    </Route>
 
-                <Route>
-                    <ErrorPage/>
-                </Route>
-            </Switch>
+                    <Route>
+                        <ErrorPage />
+                    </Route>
+                </Switch>
         </BrowserRouter>
     )
 }
