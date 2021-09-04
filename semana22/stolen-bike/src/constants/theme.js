@@ -11,6 +11,16 @@ const theme = createTheme({
         primary: "#a4a4a4"
     },
   },
+
+  overrides: {
+    MuiInput: {
+      underline: {
+        '&:hover:not($disabled):before': {
+          borderBottom: '1px solid rgba(53,151,211,255)',
+        },
+      },
+    },
+  },
 });
 
 
