@@ -6,15 +6,15 @@ import TheftDetails from "../pages/TheftDetailsPage/TheftDetails";
 const Router = () => {
     return (
         <BrowserRouter>
-                <Switch>
-                    <Route exact path="/">
-                        <HomePage />
-                    </Route>
+            <Switch>
+                <Route exact path="/">
+                    <HomePage />
+                </Route>
 
-                    <Route path="/details">
-                        <TheftDetails />
-                    </Route>
-                </Switch>
+                <Route path="/details">
+                    <TheftDetails />
+                </Route>
+            </Switch>
         </BrowserRouter>
     )
 }

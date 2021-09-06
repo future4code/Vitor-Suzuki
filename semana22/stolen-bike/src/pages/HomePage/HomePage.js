@@ -45,7 +45,6 @@ const HomePage = () => {
         setCount(null)
         axios.get(`${process.env.REACT_APP_BASE_URL}/v3/search?page=${page}&per_page=${per_page}&query=${form.search}&stolenness=proximity&location=Berlin`)
             .then(res => {
-                console.log(res.data.bikes)
                 setBikes(res.data.bikes)
                 getCount()
             })
@@ -67,7 +66,6 @@ const HomePage = () => {
 
     useEffect(() => {
         getAllBikes()
-        console.log(page)
     }, [page, per_page])
 
     return (
@@ -130,7 +128,7 @@ const HomePage = () => {
                                 {[1, 10, 20].map((item, index) => (<option key={index}>{item}</option>))}
                             </select>
                         </SelectContainer>
-                        <StyledPagination onChange={(e, num) => setPage(num)} count={count} showFirstButton showLastButton />
+                        <StyledPagination onChange={(e, num) => setPage(num)} {...{ page, count }} showFirstButton showLastButton />
                     </Pagination>
 
                     <List>
