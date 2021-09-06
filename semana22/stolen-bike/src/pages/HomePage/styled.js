@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Pagination from '@material-ui/lab/Pagination';
+import {Pagination as MaterialPagination} from '@material-ui/lab';
 
 
 export const Header = styled.div`
@@ -68,13 +68,13 @@ export const SearchContainer = styled.div`
 `
 
 export const List = styled.div`
-    margin-top: 100px;
+    margin-top: 10px;
     font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 3em;
+    padding: 1em 10em;
     max-width: 100vw;
 
     article{
@@ -112,15 +112,21 @@ export const List = styled.div`
 `
 
 export const Container = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
+    max-width: 100vw;
 `
 
-export const Footer = styled.footer`
+export const Pagination = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    padding: 0 1em 0 2em;
+    margin-top: 30px;
+    padding: 0 1em 0 2em;    
+    width: 80%;
 ` 
 
 export const SelectContainer = styled.div`
@@ -138,8 +144,13 @@ export const SelectContainer = styled.div`
     }
 `
 
-export const StyledPagination = styled(Pagination)`
+export const StyledPagination = styled(MaterialPagination)`
     .MuiPaginationItem-page.Mui-selected {
     background-color: rgba(52, 152, 219, 0.15);
 }
 `
+
+export const Loading = styled.div`
+    margin-top: 100px;
+`
+

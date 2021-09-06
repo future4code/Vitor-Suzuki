@@ -11,7 +11,7 @@ const Router = () => {
                         <HomePage />
                     </Route>
 
-                    <Route exact path="/details/:id">
+                    <Route path="/details">
                         <TheftDetails />
                     </Route>
                 </Switch>

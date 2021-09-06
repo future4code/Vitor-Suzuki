@@ -3,6 +3,6 @@ export const goToHomePage = (history) => {
 }
 
 export const goToTheftDetails = (history, id) => {
-    history.push(`/details/${id}`)
+    history.push(`/details?id=${id}`)
 }
 
