@@ -1,7 +1,7 @@
 import { Button, Input, TextField, CircularProgress } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { Header, Img, H1, H2, SearchContainer, List, Container, Pagination, StyledPagination, SelectContainer, Loading } from './styled';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import useForm from '../../hooks/useForm'
 import axios from 'axios'
 import DirectionsBikeIcon from '@material-ui/icons/DirectionsBike';
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) =>
 const HomePage = () => {
     const classes = useStyles();
     const date = new Date();
-    const [form, onChange, clear] = useForm({ search: "", from: -14810451533, to: 32524998067 })
+    const [form, onChange] = useForm({ search: "", from: -14810451533, to: 32524998067 })
     const [bikes, setBikes] = useState([])
     const [page, setPage] = useState(1)
     const [per_page, setPer_page] = useState(10)
@@ -127,7 +127,7 @@ const HomePage = () => {
                         <SelectContainer>
                             <p>Resultados por páginas: </p>
                             <select value={per_page} onChange={(e) => setPer_page(e.target.value)}>
-                                {[1, 10, 20].map(item => (<option>{item}</option>))}
+                                {[1, 10, 20].map((item, index) => (<option key={index}>{item}</option>))}
                             </select>
                         </SelectContainer>
                         <StyledPagination onChange={(e, num) => setPage(num)} count={count} showFirstButton showLastButton />
@@ -137,7 +137,7 @@ const HomePage = () => {
                         {bikes.length > 0 ? (bikes.map((bike) => {
                             const stolenDate = new Date(bike.date_stolen).toDateString()
                             return (
-                                <article onClick={() => goToTheftDetails(history, bike.id)}>
+                                <article onClick={() => goToTheftDetails(history, bike.id)} key={bike.id}>
                                     <section>
                                         <div>
                                             {bike.thumb ? <img alt={bike.title} src={bike.thumb} /> :

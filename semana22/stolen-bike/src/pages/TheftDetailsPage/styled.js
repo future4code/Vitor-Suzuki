@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { Pagination as MaterialPagination } from '@material-ui/lab';
-
 
 export const Header = styled.div`
     background: #111;

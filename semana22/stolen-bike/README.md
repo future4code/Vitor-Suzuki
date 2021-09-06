@@ -32,6 +32,10 @@ For each reported bike theft, you can see:
 
 ## What DOES NOT work?
 
+### Filter bike thefts by date rage
+
+Seems like the link given for the API is an older unavailable version. The current version does not support filtering by date range.
+
 ## Learn More
 
 - You can search for the case you want in the search area.
