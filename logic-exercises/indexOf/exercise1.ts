@@ -1,5 +1,7 @@
 // escreva uma função que simule o comportamento de um indexOf. Ela recebe uma string source, caracter query e devolve o index do query
 
+import { IndexOf } from "./IndexOf";
+
 export const indexOf = (
     source: string,
     query: string,
