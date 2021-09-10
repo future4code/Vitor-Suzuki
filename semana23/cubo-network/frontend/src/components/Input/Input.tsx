@@ -26,10 +26,11 @@ const useStyles = makeStyles(theme => ({
 export const Input: React.FC = () => {
   const classes = useStyles();
 
-  const [form, onChange] = useForm({ name: "", lastName: "", participation: "" })
+  const [form, onChange, clear] = useForm({ name: "", lastName: "", participation: "" })
   const onSubmitForm = (event: any) => {
     console.log(form)
     event.preventDefault()
+    clear()
   }
 
 
