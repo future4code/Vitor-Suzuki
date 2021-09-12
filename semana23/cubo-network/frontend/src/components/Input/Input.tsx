@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import useForm from "../../hooks/useForm"
 import Button from '@material-ui/core/Button';
 import { Form } from '../Input/styles';
+import axios from "axios"
+import IForm from '../../interfaces/IForm';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,16 +25,8 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export const Input: React.FC = () => {
+export const Input: React.FC<IForm> = ({form, onChange, onSubmitForm}) => {
   const classes = useStyles();
-
-  const [form, onChange, clear] = useForm({ name: "", lastName: "", participation: "" })
-  const onSubmitForm = (event: any) => {
-    console.log(form)
-    event.preventDefault()
-    clear()
-  }
-
 
   return (
     <Form className={classes.root} noValidate autoComplete="off" onSubmit={onSubmitForm}>
@@ -47,8 +41,8 @@ export const Input: React.FC = () => {
         />
 
         <TextField
-          name={"lastName"}
-          value={form.lastName}
+          name={"last_name"}
+          value={form.last_name}
           onChange={onChange}
           required
           id="filled-basic"

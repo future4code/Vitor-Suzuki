@@ -1,18 +1,25 @@
-import { useState } from "react"
+import React, { useState } from "react"
 
-const useForm = (initialState: any) => {
-    const [form, setForm] = useState(initialState)
+type Teste = (initialState: Record<string, unknown>) => {
+    form: Record<string, unknown>
+    handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    clear: () => void
+}
 
-    const handleInputChange = (e: any) => {
-        const {value, name} = e.target
-        setForm({...form, [name]: value})
+
+const useForm: Teste = (initialState) => {
+    const [form, setForm] = useState<Record<string, unknown>>(initialState)
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { value, name } = e.target
+        setForm({ ...form, [name]: value })
     }
 
     const clear = () => {
         setForm(initialState)
     }
 
-    return [form, handleInputChange, clear]
+    return { form, handleInputChange, clear }
 }
 
 export default useForm

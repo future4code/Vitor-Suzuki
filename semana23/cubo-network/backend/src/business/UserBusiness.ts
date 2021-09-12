@@ -20,4 +20,14 @@ export class UserBusiness {
 
         await userDatabase.signup(newUser)
     }
+
+    async getAllUsers(): Promise<any> {
+
+        const userDatabase = new UserDatabase()
+        const users = await userDatabase.getAllUsers()
+        const totalParticipation = await userDatabase.getTotalParticipation()
+
+        return {users, ...totalParticipation.flat()[0]}
+
+    }
 }
