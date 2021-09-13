@@ -1,0 +1,19 @@
+{
+  "name": "indexOf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jest.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "jest": "^27.1.1",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.2"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
