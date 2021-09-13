@@ -1,24 +1,22 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
 `
 
-export const Title = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    h1 {
-        @import url(//db.onlinewebfonts.com/c/bd6d57e762c3ae26bb99d09cce5bc33f?family=Patagonia);
-        font-family: "Patagonia";
-    }
+export const Title = styled.h1`
+    width: 100%;
+    text-align: center;
+    margin: 0;padding: 0;
+    @import url(//db.onlinewebfonts.com/c/bd6d57e762c3ae26bb99d09cce5bc33f?family=Patagonia);
+    font-family: "Patagonia";
 `
 
 export const TableContainer = styled.table`
     margin: 5vh 10px 0 18vw;
-
+    height: fit-content;
     border-collapse: collapse;
     width: 30%;
 
@@ -41,4 +39,11 @@ export const TableContainer = styled.table`
         font-size: 1.25em;
         color: #7a7a7a;
     }
+`
+
+export const Chart = styled.div`
+    display: flex;
+    width: 25vw;
+    margin-left: 10vw;
+
 `
