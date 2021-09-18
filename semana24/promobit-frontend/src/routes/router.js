@@ -1,6 +1,7 @@
 import React from "react"
 import {BrowserRouter, Switch, Route} from "react-router-dom"
-import HomePage from "../pages/HomePage"
+import HomePage from "../pages/HomePage/HomePage"
+import DetailPage from "../pages/DetailPage/DetailPage"
 
 const Router = () => {
     return(
@@ -10,7 +11,7 @@ const Router = () => {
                     <HomePage />
                 </Route>
                 <Route exact path="/detail/:id">
-                    <HomePage />
+                    <DetailPage />
                 </Route>
             </Switch>
         </BrowserRouter>
