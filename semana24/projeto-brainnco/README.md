@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+# Project Brainnco (Loterias)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deploy do Front-end feito pelo SURGE, acesse pelo link abaixo!
+Para realizar as requisições, a URL BASE foi inserida no arquivo .env. É possível encontrar a mesma via documentação da API.
 
-## Available Scripts
+## SURGE LINK
 
-In the project directory, you can run:
+O link abaixo foi testado e provado ser funcional.
+[SURGE](voiceless-profit.surge.sh)
 
-### `npm start`
+## O que funciona?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `Você consegue mudar o tipo de loteria`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Através do SELECT BOX, o usuário consegue alternar entre MEGA-SENA, QUINA, LOTOFACIL, LOTOMANIA, TIMEMANIA E DIA DE SORTE.
 
-### `npm test`
+### `A Sidebar muda de cor`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cada opção do select box possui uma respectiva cor. Essas são as indicadas pelo projeto no FIGMA.
 
-### `npm run build`
+### `Números do sorteio, título e concurso`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+As loterias possuem os números sorteados no lado direito da tela, seus títulos aparecem no sidebar, assim como o concurso e seu ID no canto inferior esquerdo da tela. Cada loteria possui informação diferente.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `Data`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ao lado do ID do concurso, podemos ver a data do mesmo no formato pedido pelo projeto (DD/MM/AAAA).
 
-### `npm run eject`
+### `Medidas relativas`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+A página foi criada com medidas relativas, visando a responsividade para aplicações DESKTOP. No entanto, não foi aprimorada para dispositivos mobile.

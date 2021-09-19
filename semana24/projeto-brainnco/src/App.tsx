@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Title } from "./styles"
+import { Container, Title, LoadingContainer } from "./styles"
 import api from './api'
 import logo from "./assets/logo.png"
 import { LotteriesContests, Contest } from "./model/types"
 import Sidebar from "./components/Sidebar"
+import CircularProgress from '@mui/material/CircularProgress';
 
 const App: React.FC = () => {
   const [lotteries, setLotteries] = useState([])
@@ -40,7 +41,7 @@ const App: React.FC = () => {
       .then(res => setCurrentContest(res.data))
   }, [lotteryId])
 
-  if (!currentContest) return <h1>Loading</h1>
+  if (!currentContest) return <LoadingContainer><CircularProgress /></LoadingContainer>
 
   return (
     <Container>
