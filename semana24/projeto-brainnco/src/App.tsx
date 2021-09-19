@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Title } from "./styles"
 import api from './api'
 import logo from "./assets/logo.png"
-import {LotteriesContests, Contest} from "./model/types"
+import { LotteriesContests, Contest } from "./model/types"
 import Sidebar from "./components/Sidebar"
 
 const App: React.FC = () => {
@@ -17,6 +17,9 @@ const App: React.FC = () => {
     "lotomania": '#FFAB64',
     "timemania": '#5AAD7D',
     "Dia de sorte": '#BFAF83',
+  }
+  const transformDate = () => {
+    return currentContest?.data.split('T')[0].split('-').reverse().join('/')
   }
 
   useEffect(() => {
@@ -42,7 +45,7 @@ const App: React.FC = () => {
   return (
     <Container>
       <section>
-        <Sidebar color={Object.values(colors)[Number(lotteryId)]}/>
+        <Sidebar color={Object.values(colors)[Number(lotteryId)]} />
         <select onChange={e => setLotteryId(e.target.value)}>
           {lotteries.map(({ nome, id }) => <option value={id}>{nome}</option>)}
         </select>
@@ -52,7 +55,7 @@ const App: React.FC = () => {
         </Title>
         <div>
           <p>Concurso</p>
-          {<p>{currentContest.id} - {currentContest.data}</p>}
+          {<p>{currentContest.id} - {transformDate()}</p>}
         </div>
       </section>
       <section>

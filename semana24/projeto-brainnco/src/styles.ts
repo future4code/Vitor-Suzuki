@@ -30,6 +30,7 @@ export const Container = styled.div`
         margin-right: 10vw;
         flex-wrap: wrap;
         width: 100vw;
+        padding: 16vh 0;
     }
 
     b {
